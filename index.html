@@ -35,12 +35,14 @@
         }
 
         .hero {
-            background: linear-gradient(45deg, rgba(10, 37, 64, 0.85), rgba(0, 100, 102, 0.85)), url('https://images.pexels.com/photos/6489107/pexels-photo-6489107.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+            background: linear-gradient(45deg, rgba(10, 37, 64, 0.8), rgba(0, 196, 204, 0.7)), url('https://files.catbox.moe/tcjkio.png');
             background-size: cover;
             background-position: center;
             padding: 100px 20px;
             text-align: center;
             color: var(--white-color);
+            position: relative;
+            overflow: hidden;
         }
         .hero h1 {
             font-size: 3.5em;
@@ -78,16 +80,6 @@
             box-shadow: 0 10px 25px rgba(0, 196, 204, 0.4);
         }
 
-        .logo-section {
-            padding: 50px 20px;
-            text-align: center;
-            background: var(--light-bg);
-        }
-        .logo-section img {
-            max-width: 200px;
-            height: auto;
-        }
-
         .section-title {
             text-align: center;
             font-size: 2.8em;
@@ -110,39 +102,13 @@
             border-radius: 5px;
         }
 
-        /* ----- Sections Styling ----- */
-        #layanan, #produk, #pelanggan, #testimoni, .social-media {
+        #produk, #pelanggan, #testimoni, .social-media {
             padding: 80px 20px;
         }
-        #layanan, #pelanggan, .social-media {
+        #pelanggan, .social-media, .text-section {
             background-color: var(--light-bg);
         }
 
-        .services-summary-grid {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            text-align: center;
-        }
-        .service-summary-item {
-            font-size: 1.1em;
-            font-weight: 500;
-            color: var(--light-text);
-            background: var(--white-color);
-            padding: 25px;
-            border: 1px solid #e9ecef;
-            border-radius: var(--border-radius);
-            transition: all 0.3s ease;
-        }
-        .service-summary-item:hover {
-            border-color: var(--accent-color);
-            color: var(--primary-color);
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.07);
-        }
-        
         .service-grid {
             max-width: 1200px;
             margin: 0 auto;
@@ -229,15 +195,9 @@
             border-radius: var(--border-radius);
             box-shadow: 0 10px 25px rgba(0,0,0,0.08);
             overflow: hidden;
-            text-decoration: none;
             color: var(--dark-text);
             display: flex;
             flex-direction: column;
-            transition: all 0.3s ease;
-        }
-        .customer-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
         }
         .customer-card .card-content {
             padding: 30px;
@@ -251,81 +211,63 @@
         }
         .customer-card .card-image {
             width: 100%;
-            height: 180px;
+            height: 250px;
             object-fit: cover;
+        }
+        
+        .text-section {
+            padding: 80px 20px;
+            text-align: center;
+        }
+        .text-section .quote-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .text-section blockquote {
+            font-size: 1.3em;
+            font-style: italic;
+            line-height: 1.8;
+            opacity: 0.9;
+            margin: 0 0 25px 0;
+            padding: 15px;
+            border-left: 5px solid var(--accent-color);
+            background: var(--white-color);
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: left;
         }
 
         #testimoni {
             background-color: var(--primary-color);
             color: var(--white-color);
         }
-        #testimoni .section-title {
+        #testimoni .section-title, #testimoni blockquote {
             color: var(--white-color);
         }
-        .slider-container {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
+        #testimoni blockquote {
+            background: none;
+            border-left: 5px solid var(--accent-color);
+            box-shadow: none;
         }
-        .slide {
-            display: none;
-            font-size: 1.3em;
-            font-style: italic;
-            line-height: 1.8;
-            opacity: 0.9;
-        }
-        .slide.active {
-            display: block;
-        }
-        .slider-nav {
-            margin-top: 30px;
+        
+        .social-media { padding-top: 60px; padding-bottom: 60px; }
+        .social-icons {
             display: flex;
             justify-content: center;
-            align-items: center;
+            gap: 20px;
         }
-        .slider-nav button {
-            background: none;
-            border: none;
-            font-size: 2em;
-            color: var(--accent-color);
-            cursor: pointer;
-            padding: 0 25px;
-            transition: transform 0.3s ease;
-        }
-        .slider-nav button:hover {
-            transform: scale(1.2);
-        }
-        .dots-container {
-            display: flex;
-        }
-        .dot {
-            height: 12px;
-            width: 12px;
-            margin: 0 6px;
-            background-color: rgba(255,255,255,0.3);
-            border-radius: 50%;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        .dot.active {
-            background-color: var(--accent-color);
-            transform: scale(1.3);
-        }
-
-        .social-media { padding-top: 60px; padding-bottom: 60px; }
         .social-icons a {
-            font-size: 3.5em;
-            color: var(--dark-text);
-            margin: 0 25px;
+            font-size: 4em;
             text-decoration: none;
             transition: all 0.3s ease;
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         .social-icons a:hover {
             transform: translateY(-5px) scale(1.1);
-            color: var(--accent-color);
         }
-        .social-icons .icon-shopee:hover { color: #ee4d2d; }
-        .social-icons .icon-instagram:hover { color: #d6249f; }
 
         .footer {
             background-color: var(--primary-color);
@@ -338,13 +280,17 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
+            align-items: center;
             gap: 40px;
         }
-        .footer-map iframe {
-            width: 100%;
-            min-height: 280px;
-            border-radius: var(--border-radius);
-            border: none;
+        .footer-logo-container {
+            text-align: center;
+        }
+        .footer-logo-container img {
+            max-width: 250px;
+            background: var(--white-color);
+            border-radius: 50%;
+            padding: 15px;
         }
         .footer-contact h3 {
             margin-top: 0;
@@ -357,7 +303,15 @@
             font-size: 1.1em;
             opacity: 0.9;
         }
-        .footer-col-map, .footer-col-contact {
+        .footer-contact a {
+            color: var(--white-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer-contact a:hover {
+            color: var(--accent-color);
+        }
+        .footer-col-logo, .footer-col-contact {
             flex: 1;
             min-width: 320px;
         }
@@ -423,37 +377,23 @@
         <section class="hero">
             <h1>RUANGAN NYAMAN DINGIN LAGI</h1>
             <p>"Kami siap menjadi solusi terbaik untuk kenyamanan ruangan Anda"</p>
-            <a href="#produk" class="btn-jadwal"><i class="fas fa-calendar-check"></i> Lihat Layanan & Harga</a>
-        </section>
-
-        <section class="logo-section">
-            <img src="https://static.wixstatic.com/media/3ea34d_ad32351391e743bc925f5bb7229b7e53~mv2.jpg/v1/crop/x_0,y_1,w_1280,h_1273/fill/w_584,h_582,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/photo_2025-10-20_22-49-02.jpg" alt="Logo Udara Segar ID">
-        </section>
-
-        <section id="layanan">
-            <h2 class="section-title">Ringkasan Layanan</h2>
-            <div class="services-summary-grid">
-                <div class="service-summary-item">Service & Cuci AC</div>
-                <div class="service-summary-item">Perbaikan & Bongkar Pasang</div>
-                <div class="service-summary-item">Instalasi AC Baru</div>
-                <div class="service-summary-item">Perawatan Berkala</div>
-            </div>
+            <a href="#produk" class="btn-jadwal"><i class="fas fa-calendar-check"></i> Jadwalkan Servis</a>
         </section>
 
         <section id="produk">
             <h2 class="section-title">Katalog Layanan & Harga</h2>
             <div class="service-grid">
                 <div class="service-card">
-                    <img src="https://images.pexels.com/photos/8005396/pexels-photo-8005396.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Cuci AC" class="card-image">
+                    <img src="https://telegra.ph/file/44b4fa104c0f70a9d27d2-be034be1d4ac1efebd.jpg" alt="Cuci AC" class="card-image">
                     <div class="card-content">
                         <h3>Cuci AC Standar (0.5 - 1.5 PK)</h3>
                         <p class="card-description">Pembersihan unit indoor & outdoor menyeluruh untuk udara lebih bersih dan performa AC optimal.</p>
-                        <p class="card-price">Rp 75.000</p>
+                        <p class="card-price">Rp 150.000</p>
                         <a href="https://wa.me/6282333251919?text=Halo%2C%20saya%20tertarik%20untuk%20memesan%20layanan%20Cuci%20AC%20Standar." target="_blank" class="btn-book"><i class="fab fa-whatsapp"></i> Pesan Sekarang</a>
                     </div>
                 </div>
                 <div class="service-card">
-                    <img src="https://images.pexels.com/photos/713297/pexels-photo-713297.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Perbaikan AC" class="card-image">
+                    <img src="https://telegra.ph/file/d8653e326734095df5d6d-f6093b7f91424d02d0.jpg" alt="Perbaikan AC" class="card-image">
                     <div class="card-content">
                         <h3>Perbaikan AC (Semua Tipe)</h3>
                         <p class="card-description">Diagnosa dan perbaikan berbagai kerusakan seperti bocor, tidak dingin, atau mati total oleh teknisi ahli.</p>
@@ -462,39 +402,12 @@
                     </div>
                 </div>
                 <div class="service-card">
-                    <img src="https://images.pexels.com/photos/7217988/pexels-photo-7217988.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Isi Freon" class="card-image">
+                    <img src="https://telegra.ph/file/d7e108e1ac0c6be73bfd6-ee1a2fd87555854db5.jpg" alt="Isi Freon" class="card-image">
                     <div class="card-content">
                         <h3>Isi Ulang Freon R32/R410a</h3>
                         <p class="card-description">Pengisian kembali freon berkualitas tinggi untuk mengembalikan performa pendinginan AC Anda.</p>
                         <p class="card-price">Mulai dari Rp 120.000</p>
                         <a href="https://wa.me/6282333251919?text=Halo%2C%20saya%20ingin%20memesan%20layanan%20Isi%20Ulang%20Freon." target="_blank" class="btn-book"><i class="fab fa-whatsapp"></i> Pesan Sekarang</a>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <img src="https://images.pexels.com/photos/585419/pexels-photo-585419.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Bongkar Pasang AC" class="card-image">
-                    <div class="card-content">
-                        <h3>Bongkar Pasang AC</h3>
-                        <p class="card-description">Jasa bongkar AC di lokasi lama dan pasang kembali di lokasi baru dengan instalasi yang rapi dan aman.</p>
-                        <p class="card-price">Mulai dari Rp 200.000</p>
-                        <a href="https://wa.me/6282333251919?text=Halo%2C%20saya%20butuh%20jasa%20Bongkar%20Pasang%20AC." target="_blank" class="btn-book"><i class="fab fa-whatsapp"></i> Atur Jadwal</a>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <img src="https://images.pexels.com/photos/8461453/pexels-photo-8461453.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Instalasi AC Baru" class="card-image">
-                    <div class="card-content">
-                        <h3>Instalasi AC Baru</h3>
-                        <p class="card-description">Pemasangan profesional untuk unit AC baru Anda, memastikan kinerja maksimal dan garansi instalasi.</p>
-                        <p class="card-price">Mulai dari Rp 175.000</p>
-                        <a href="https://wa.me/6282333251919?text=Halo%2C%20saya%20ingin%20memasang%20AC%20baru." target="_blank" class="btn-book"><i class="fab fa-whatsapp"></i> Atur Jadwal</a>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <img src="https://images.pexels.com/photos/7551673/pexels-photo-7551673.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Perawatan Berkala" class="card-image">
-                    <div class="card-content">
-                        <h3>Kontrak Perawatan Berkala</h3>
-                        <p class="card-description">Program perawatan rutin untuk perkantoran atau bisnis, menjaga semua unit AC tetap prima sepanjang tahun.</p>
-                        <p class="card-price">Hubungi Kami</p>
-                        <a href="https://wa.me/6282333251919?text=Halo%2C%20saya%20tertarik%20dengan%20program%20Kontrak%20Perawatan%20Berkala." target="_blank" class="btn-book"><i class="fab fa-whatsapp"></i> Minta Penawaran</a>
                     </div>
                 </div>
             </div>
@@ -504,52 +417,64 @@
             <h2 class="section-title">PELANGGAN KAMI</h2>
             <div class="customer-grid">
                 <div class="customer-card">
-                    <img src="https://images.pexels.com/photos/5765975/pexels-photo-5765975.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Retail & Hunian" class="card-image">
+                    <img src="https://static.wixstatic.com/media/3ea34d_e0e124800ce24a30a800593456faab37~mv2.png/v1/crop/x_0,y_57,w_3000,h_1114/fill/w_662,h_274,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Untitled%20design%20(6).png" alt="Pelanggan Perumahan" class="card-image">
                     <div class="card-content">
-                        <h3>Retail, Rumah, Apartemen, Hotel</h3>
+                        <h3>Retail, Rumah, & Apartemen</h3>
                     </div>
                 </div>
                 <div class="customer-card">
-                    <img src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Bisnis & Kantor" class="card-image">
+                    <img src="https://telegra.ph/file/830d17a78f6dc3a0f68e7-8936a0e1214006f21e.jpg" alt="Pelanggan Korporat" class="card-image">
                     <div class="card-content">
-                        <h3>Bisnis, Kantor, Perusahaan, Pabrik</h3>
+                        <h3>Bisnis, Kantor, & Perusahaan</h3>
                     </div>
                 </div>
-                 <div class="customer-card">
-                     <img src="https://images.pexels.com/photos/8577233/pexels-photo-8577233.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Pemerintahan" class="card-image">
+                <div class="customer-card">
+                    <img src="https://telegra.ph/file/31741d21f6385f39674dd-a460039a9cf376429e.jpg" alt="Pelanggan Proyek" class="card-image">
                     <div class="card-content">
-                        <h3>Pemerintahan & Instansi</h3>
+                        <h3>Konstruksi, Developer, & Kontraktor</h3>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="testimoni">
-            <h2 class="section-title">PESAN AYAH IBU</h2>
-            <div class="slider-container">
-                <div class="slide active">"Melayani sebaik mungkin, seakan-akan sedang melayani Tuhan"</div>
-                <div class="slide">"Kerja teknisi itu 70% servis, 30% pura-pura ngerti pertanyaan customer."</div>
-                <div class="slide">"Kejujuran adalah kunci utama dalam bekerja, rezeki akan mengikuti."</div>
-                <div class="slider-nav">
-                    <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
-                    <div class="dots-container"></div>
-                    <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
-                </div>
+        <section id="testimoni" class="text-section">
+            <div class="quote-container">
+                <h2 class="section-title">PESAN AYAH IBU</h2>
+                <blockquote>"Melayani sebaik mungkin, seakan-akan sedang melayani Tuhan"</blockquote>
+                <blockquote>"Kerja teknisi itu 70% servis, 30% pura-pura ngerti pertanyaan customer."</blockquote>
+            </div>
+        </section>
+
+        <section class="text-section">
+            <div class="quote-container">
+                <h2 class="section-title">DOA TUKANG SERVIS</h2>
+                <blockquote>"Hari ini targetnya cuma satu: ademkan ruangan, bukan suasana."</blockquote>
+                <blockquote>"Kami datang untuk benerin AC, bukan benerin suasana hati ibu."</blockquote>
+                <blockquote>"Buka cover AC, ketemu debu. Buka obrolan sama customer, ketemu drama."</blockquote>
+            </div>
+        </section>
+
+        <section class="text-section" style="background-color: var(--white-color);">
+            <div class="quote-container">
+                <h2 class="section-title">JOKES BAPAK-BAPAK</h2>
+                <blockquote>"Tebak: Kenapa AC sering sakit hati? Jawab: Soalnya kerja keras terus, tapi lupa diservis."</blockquote>
+                <blockquote>"Kalau AC ngambek, suasana ikut panas."</blockquote>
             </div>
         </section>
 
         <section class="social-media">
             <h2 class="section-title">SOCIAL MEDIA</h2>
             <div class="social-icons">
-                <a href="#" class="icon-shopee" aria-label="Shopee"><i class="fas fa-shopping-bag"></i></a>
-                <a href="#" class="icon-instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.instagram.com/udarasgar.id" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             </div>
         </section>
 
         <footer id="kontak" class="footer">
             <div class="footer-content">
-                <div class="footer-col-map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.800099899321!2d112.7533356749997!3d-7.26296309274246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7f9675453226d%3A0x68a8cf423c4573d!2sJl.%20Surabayan%20II%20No.10%2C%20RT.002%2FRW.02%2C%20Gubeng%2C%20Kec.%20Gubeng%2C%20Surabaya%2C%20Jawa%20Timur%2060281!5e0!3m2!1sid!2sid!4v1672895698123!5m2!1sid!2sid" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="footer-col-logo">
+                    <div class="footer-logo-container">
+                        <img src="https://files.catbox.moe/mxr9ww.jpg" alt="Logo Udara Segar ID">
+                    </div>
                 </div>
                 <div class="footer-col-contact">
                     <h3>Hubungi Kami</h3>
@@ -559,11 +484,11 @@
                     </p>
                     <p>
                         <strong>Telepon:</strong><br>
-                        082333251919 (WhatsApp)
+                        <a href="https://wa.me/6282333251919" target="_blank">082333251919 (WhatsApp)</a>
                     </p>
                     <p>
                         <strong>Email:</strong><br>
-                        ansorifadli19@gmail.com
+                        <a href="mailto:ansorifadli19@gmail.com">ansorifadli19@gmail.com</a>
                     </p>
                 </div>
             </div>
@@ -578,77 +503,36 @@
             <i class="fas fa-home"></i>
             <span>Beranda</span>
         </a>
-        <a href="#layanan" class="nav-item">
-            <i class="fas fa-concierge-bell"></i>
-            <span>Layanan</span>
-        </a>
         <a href="#produk" class="nav-item">
-            <i class="fas fa-tag"></i>
-            <span>Harga</span>
+            <i class="fas fa-wrench"></i>
+            <span>Jadwalkan Servis</span>
+        </a>
+        <a href="https://wa.me/6282333251919?text=Halo%2C%20saya%20ingin%20bertanya%20tentang%20pembelian%20unit%20AC%20baru." target="_blank" class="nav-item">
+            <i class="fas fa-shopping-cart"></i>
+            <span>Beli AC</span>
         </a>
         <a href="#pelanggan" class="nav-item">
             <i class="fas fa-users"></i>
             <span>Pelanggan</span>
         </a>
         <a href="#kontak" class="nav-item">
-            <i class="fas fa-envelope"></i>
+            <i class="fas fa-headset"></i>
             <span>Kontak</span>
         </a>
     </nav>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const slides = document.querySelectorAll('.slide');
-            const dotsContainer = document.querySelector('.dots-container');
-            let currentSlide = 0;
-
-            if (slides.length > 0) {
-                slides.forEach((slide, index) => {
-                    const dot = document.createElement('span');
-                    dot.classList.add('dot');
-                    if (index === 0) dot.classList.add('active');
-                    dot.dataset.slide = index;
-                    dotsContainer.appendChild(dot);
-                });
-
-                const dots = document.querySelectorAll('.dot');
-
-                function showSlide(n) {
-                    slides.forEach(slide => slide.classList.remove('active'));
-                    dots.forEach(dot => dot.classList.remove('active'));
-                    slides[n].classList.add('active');
-                    dots[n].classList.add('active');
-                }
-
-                function nextSlide() {
-                    currentSlide = (currentSlide + 1) % slides.length;
-                    showSlide(currentSlide);
-                }
-
-                function prevSlide() {
-                    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-                    showSlide(currentSlide);
-                }
-
-                document.querySelector('.next-btn').addEventListener('click', nextSlide);
-                document.querySelector('.prev-btn').addEventListener('click', prevSlide);
-                dots.forEach(dot => {
-                    dot.addEventListener('click', () => {
-                        currentSlide = parseInt(dot.dataset.slide);
-                        showSlide(currentSlide);
-                    });
-                });
-            }
-
             const navItems = document.querySelectorAll('.nav-item');
             const sections = document.querySelectorAll('main section, main footer');
 
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
+                        let currentId = entry.target.id;
                         navItems.forEach(item => {
                             item.classList.remove('active');
-                            if (item.getAttribute('href').substring(1) === entry.target.id) {
+                            if (item.getAttribute('href') === `#${currentId}`) {
                                 item.classList.add('active');
                             }
                         });

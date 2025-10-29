@@ -19,11 +19,9 @@
             --price-color: #d9480f;
             --border-radius: 12px;
         }
-
         html {
             scroll-behavior: smooth;
         }
-
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
@@ -33,7 +31,6 @@
             color: var(--dark-text);
             padding-bottom: 80px;
         }
-
         .hero {
             background: linear-gradient(45deg, rgba(10, 37, 64, 0.8), rgba(0, 196, 204, 0.7)), url('https://files.catbox.moe/tcjkio.png');
             background-size: cover;
@@ -79,7 +76,6 @@
             transform: translateY(-5px) scale(1.03);
             box-shadow: 0 10px 25px rgba(0, 196, 204, 0.4);
         }
-
         .section-title {
             text-align: center;
             font-size: 2.8em;
@@ -89,6 +85,7 @@
             text-transform: uppercase;
             position: relative;
             padding-bottom: 15px;
+            transition: all 0.3s ease-in-out;
         }
         .section-title::after {
             content: '';
@@ -101,15 +98,13 @@
             background-color: var(--accent-color);
             border-radius: 5px;
         }
-
         #produk, #pelanggan, #testimoni, .social-media {
             padding: 80px 20px;
         }
-        #pelanggan, .social-media, .text-section {
+        #pelanggan, .social-media {
             background-color: var(--light-bg);
         }
-
-        .service-grid {
+        .service-grid, .customer-grid {
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
@@ -182,75 +177,88 @@
             color: var(--white-color);
             transform: scale(1.03);
         }
-
-        .customer-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-        }
         .customer-card {
             background: var(--white-color);
             border-radius: var(--border-radius);
             box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-            overflow: hidden;
             color: var(--dark-text);
             display: flex;
-            flex-direction: column;
-        }
-        .customer-card .card-content {
+            justify-content: center;
+            align-items: center;
             padding: 30px;
+            text-align: center;
+            min-height: 100px;
         }
         .customer-card h3 {
-            font-size: 1.8em;
-            margin: 0 0 10px 0;
+            font-size: 1.6em;
+            margin: 0;
             font-weight: 700;
-            line-height: 1.3;
+            line-height: 1.4;
             color: var(--primary-color);
         }
-        .customer-card .card-image {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
+        #testimoni {
+            background-color: #dfff00;
+            color: var(--primary-color);
+            overflow: hidden;
         }
-        
-        .text-section {
-            padding: 80px 20px;
-            text-align: center;
+        #testimoni .section-title {
+            color: #0056b3;
+            font-weight: 900;
         }
-        .text-section .quote-container {
+        .slider-container {
             max-width: 800px;
             margin: 0 auto;
+            position: relative;
+            overflow: hidden;
         }
-        .text-section blockquote {
-            font-size: 1.3em;
-            font-style: italic;
-            line-height: 1.8;
-            opacity: 0.9;
-            margin: 0 0 25px 0;
-            padding: 15px;
-            border-left: 5px solid var(--accent-color);
-            background: var(--white-color);
-            border-radius: 0 var(--border-radius) var(--border-radius) 0;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            text-align: left;
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+            padding: 0 50px;
+            display: none;
         }
-
-        #testimoni {
-            background-color: var(--primary-color);
-            color: var(--white-color);
+        .slide.active {
+            display: block;
         }
-        #testimoni .section-title, #testimoni blockquote {
-            color: var(--white-color);
-        }
-        #testimoni blockquote {
+        .slide blockquote {
             background: none;
-            border-left: 5px solid var(--accent-color);
+            border: none;
             box-shadow: none;
+            color: #0056b3;
+            margin: 15px auto;
+            max-width: 85%;
+            font-size: 1.3em;
+            font-style: normal;
+            line-height: 1.6;
+            padding: 10px 0;
+            text-align: center;
+            overflow-wrap: break-word;
+            font-weight: 500;
         }
-        
-        .social-media { padding-top: 60px; padding-bottom: 60px; }
+        .slider-dots {
+            text-align: center;
+            padding: 20px 0;
+        }
+        .dot {
+            cursor: pointer;
+            height: 12px;
+            width: 12px;
+            margin: 0 5px;
+            background-color: rgba(0, 86, 179, 0.3);
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+        .dot.active {
+            background-color: #0056b3;
+        }
+        #prevBtn, #nextBtn {
+            display: none;
+        }
+        .social-media { 
+            padding-top: 60px; 
+            padding-bottom: 60px; 
+        }
         .social-icons {
             display: flex;
             justify-content: center;
@@ -268,7 +276,6 @@
         .social-icons a:hover {
             transform: translateY(-5px) scale(1.1);
         }
-
         .footer {
             background-color: var(--primary-color);
             color: var(--white-color);
@@ -279,7 +286,7 @@
             margin: 0 auto;
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             gap: 40px;
         }
@@ -294,21 +301,44 @@
         }
         .footer-contact h3 {
             margin-top: 0;
+            margin-bottom: 30px;
             font-size: 2em;
             color: var(--accent-color);
+            text-align: center;
         }
-        .footer-contact p {
-            margin: 15px 0;
-            line-height: 1.8;
+        .contact-info-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .contact-item {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            transition: background-color 0.3s ease;
+        }
+        .contact-item:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        .contact-label {
+            display: block;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 8px;
+            font-size: 1em;
+        }
+        .contact-value {
             font-size: 1.1em;
-            opacity: 0.9;
+            line-height: 1.6;
+            color: var(--white-color);
         }
-        .footer-contact a {
+        .contact-value a {
             color: var(--white-color);
             text-decoration: none;
             transition: color 0.3s ease;
         }
-        .footer-contact a:hover {
+        .contact-value a:hover {
             color: var(--accent-color);
         }
         .footer-col-logo, .footer-col-contact {
@@ -317,13 +347,14 @@
         }
         .copyright {
             text-align: center;
-            margin-top: 40px;
-            padding-top: 25px;
-            border-top: 1px solid rgba(255,255,255,0.2);
+            margin: 40px auto 0 auto;
+            max-width: 1100px;
+            padding: 20px;
             font-size: 0.9em;
-            opacity: 0.7;
+            opacity: 0.8;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: var(--border-radius);
         }
-
         .bottom-nav {
             position: fixed;
             bottom: 0;
@@ -359,7 +390,6 @@
             color: var(--accent-color);
             transform: translateY(-3px);
         }
-
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5em; }
             .hero p { font-size: 1.1em; }
@@ -368,6 +398,10 @@
             .footer-content { flex-direction: column; }
             .nav-item i { font-size: 1.6em; }
             .nav-item span { font-size: 0.7em; }
+            .slider-container { min-height: 250px; }
+            .slide { padding: 0 35px; }
+            .slide blockquote { font-size: 1.2em; line-height: 1.8; max-width: 95%;}
+            .customer-card h3 { font-size: 1.4em; }
         }
     </style>
 </head>
@@ -410,6 +444,33 @@
                         <a href="https://wa.me/6282333251919?text=Halo%2C%20saya%20ingin%20memesan%20layanan%20Isi%20Ulang%20Freon." target="_blank" class="btn-book"><i class="fab fa-whatsapp"></i> Pesan Sekarang</a>
                     </div>
                 </div>
+                <div class="service-card">
+                    <img src="https://files.catbox.moe/c8hd0o.jpg" alt="Layanan untuk Pemerintahan" class="card-image">
+                    <div class="card-content">
+                        <h3>Pemerintahan & Instansi</h3>
+                        <p class="card-description">Layanan perawatan dan perbaikan AC untuk kantor pemerintahan dan berbagai instansi.</p>
+                        <p class="card-price">Harga Khusus</p>
+                        <a href="https://wa.me/6282333251919?text=Halo%2C%20saya%20dari%20instansi%20pemerintahan%2C%20ingin%20bertanya%20tentang%20layanan%20AC." target="_blank" class="btn-book"><i class="fab fa-whatsapp"></i> Ajukan Penawaran</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="https://files.catbox.moe/d0htyh.jpg" alt="Layanan untuk Tempat Pendidikan" class="card-image">
+                    <div class="card-content">
+                        <h3>Tempat Pendidikan</h3>
+                        <p class="card-description">Menjaga kenyamanan ruang belajar di sekolah, universitas, dan lembaga pendidikan lainnya.</p>
+                        <p class="card-price">Harga Khusus</p>
+                        <a href="https://wa.me/6282333251919?text=Halo%2C%20saya%20dari%20institusi%20pendidikan%2C%20ingin%20bertanya%20tentang%20layanan%20AC." target="_blank" class="btn-book"><i class="fab fa-whatsapp"></i> Ajukan Penawaran</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="https://files.catbox.moe/2lujt9.jpg" alt="Layanan untuk Fasilitas Sosial" class="card-image">
+                    <div class="card-content">
+                        <h3>Fasilitas Sosial & Rumah Ibadah</h3>
+                        <p class="card-description">Perawatan AC untuk rumah sakit, klinik, masjid, gereja, dan fasilitas umum lainnya.</p>
+                        <p class="card-price">Harga Khusus</p>
+                        <a href="https://wa.me/6282333251919?text=Halo%2C%20saya%20ingin%20bertanya%20tentang%20layanan%20AC%20untuk%20fasilitas%20sosial." target="_blank" class="btn-book"><i class="fab fa-whatsapp"></i> Ajukan Penawaran</a>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -417,49 +478,46 @@
             <h2 class="section-title">PELANGGAN KAMI</h2>
             <div class="customer-grid">
                 <div class="customer-card">
-                    <img src="https://static.wixstatic.com/media/3ea34d_e0e124800ce24a30a800593456faab37~mv2.png/v1/crop/x_0,y_57,w_3000,h_1114/fill/w_662,h_274,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Untitled%20design%20(6).png" alt="Pelanggan Perumahan" class="card-image">
-                    <div class="card-content">
-                        <h3>Retail, Rumah, & Apartemen</h3>
-                    </div>
+                    <h3>Retail, Rumah, & Apartemen</h3>
                 </div>
                 <div class="customer-card">
-                    <img src="https://files.catbox.moe/xbhvpc.jpg" alt="Pelanggan Korporat" class="card-image">
-                    <div class="card-content">
-                        <h3>Bisnis, Kantor, & Perusahaan</h3>
-                    </div>
+                    <h3>Bisnis, Kantor, & Perusahaan</h3>
                 </div>
                 <div class="customer-card">
-                    <img src="https://files.catbox.moe/vbpk2c.jpg" alt="Pelanggan Proyek" class="card-image">
-                    <div class="card-content">
-                        <h3>Konstruksi, Developer, & Kontraktor</h3>
-                    </div>
+                    <h3>Konstruksi & Developer</h3>
+                </div>
+                 <div class="customer-card">
+                    <h3>Hotel & Restoran</h3>
+                </div>
+                <div class="customer-card">
+                    <h3>Pusat Perbelanjaan</h3>
+                </div>
+                <div class="customer-card">
+                    <h3>Industri & Pabrik</h3>
                 </div>
             </div>
         </section>
 
-        <section id="testimoni" class="text-section">
-            <div class="quote-container">
-                <h2 class="section-title">PESAN AYAH IBU</h2>
-                <blockquote>"Melayani sebaik mungkin, seakan-akan sedang melayani Tuhan"</blockquote>
-                <blockquote>"Kerja teknisi itu 70% servis, 30% pura-pura ngerti pertanyaan customer."</blockquote>
+        <section id="testimoni">
+            <h2 id="slider-title" class="section-title">PESAN AYAH IBU</h2>
+            <div class="slider-container">
+                <div class="slider-wrapper">
+                    <div class="slide active" data-title="PESAN AYAH IBU">
+                        <blockquote>"Melayani sebaik mungkin, seakan-akan sedang melayani Tuhan."</blockquote>
+                        <blockquote>"Kerja teknisi itu 70% servis, 30% pura-pura ngerti pertanyaan customer."</blockquote>
+                    </div>
+                    <div class="slide" data-title="DOA TUKANG SERVIS">
+                        <blockquote>"Hari ini targetnya cuma satu: ademkan ruangan, bukan suasana."</blockquote>
+                        <blockquote>"Kami datang untuk benerin AC, bukan benerin suasana hati ibu."</blockquote>
+                        <blockquote>"Buka cover AC, ketemu debu. Buka obrolan sama customer, ketemu drama."</blockquote>
+                    </div>
+                    <div class="slide" data-title="JOKES BAPAK-BAPAK">
+                        <blockquote>"Tebak: Kenapa AC sering sakit hati? Jawab: Soalnya kerja keras terus, tapi lupa diservis."</blockquote>
+                        <blockquote>"Kalau AC ngambek, suasana ikut panas."</blockquote>
+                    </div>
+                </div>
             </div>
-        </section>
-
-        <section class="text-section">
-            <div class="quote-container">
-                <h2 class="section-title">DOA TUKANG SERVIS</h2>
-                <blockquote>"Hari ini targetnya cuma satu: ademkan ruangan, bukan suasana."</blockquote>
-                <blockquote>"Kami datang untuk benerin AC, bukan benerin suasana hati ibu."</blockquote>
-                <blockquote>"Buka cover AC, ketemu debu. Buka obrolan sama customer, ketemu drama."</blockquote>
-            </div>
-        </section>
-
-        <section class="text-section" style="background-color: var(--white-color);">
-            <div class="quote-container">
-                <h2 class="section-title">JOKES BAPAK-BAPAK</h2>
-                <blockquote>"Tebak: Kenapa AC sering sakit hati? Jawab: Soalnya kerja keras terus, tapi lupa diservis."</blockquote>
-                <blockquote>"Kalau AC ngambek, suasana ikut panas."</blockquote>
-            </div>
+            <div class="slider-dots"></div>
         </section>
 
         <section class="social-media">
@@ -478,18 +536,24 @@
                 </div>
                 <div class="footer-col-contact">
                     <h3>Hubungi Kami</h3>
-                    <p>
-                        <strong>Alamat:</strong><br>
-                        Jalan Surabayan II No 10, Kota Surabaya, 60261
-                    </p>
-                    <p>
-                        <strong>Telepon:</strong><br>
-                        <a href="https://wa.me/6282333251919" target="_blank">082333251919 (WhatsApp)</a>
-                    </p>
-                    <p>
-                        <strong>Email:</strong><br>
-                        <a href="mailto:ansorifadli19@gmail.com">ansorifadli19@gmail.com</a>
-                    </p>
+                    <div class="contact-info-grid">
+                        <div class="contact-item">
+                            <span class="contact-label">Alamat:</span>
+                            <span class="contact-value">Jalan Surabayan II No 10, Kota Surabaya, 60261</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-label">Telepon:</span>
+                            <span class="contact-value">
+                                <a href="https://wa.me/6282333251919" target="_blank">082333251919 (WhatsApp)</a>
+                            </span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-label">Email:</span>
+                            <span class="contact-value">
+                                <a href="mailto:ansorifadli19@gmail.com">ansorifadli19@gmail.com</a>
+                            </span>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="copyright">
@@ -525,7 +589,6 @@
         document.addEventListener('DOMContentLoaded', function() {
             const navItems = document.querySelectorAll('.nav-item');
             const sections = document.querySelectorAll('main section, main footer');
-
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -539,12 +602,55 @@
                     }
                 });
             }, { threshold: 0.5 });
-
             sections.forEach(section => {
                 if(section.id) {
                    observer.observe(section);
                 }
             });
+
+            const sliderTitle = document.getElementById('slider-title');
+            const slides = document.querySelectorAll('.slide');
+            const dotsContainer = document.querySelector('.slider-dots');
+            let currentIndex = 0;
+            let slideInterval;
+
+            slides.forEach((_, index) => {
+                const dot = document.createElement('span');
+                dot.classList.add('dot');
+                dot.addEventListener('click', () => {
+                    setCurrentSlide(index);
+                    resetInterval();
+                });
+                dotsContainer.appendChild(dot);
+            });
+
+            const dots = document.querySelectorAll('.dot');
+
+            function setCurrentSlide(index) {
+                slides.forEach(slide => slide.classList.remove('active'));
+                dots.forEach(dot => dot.classList.remove('active'));
+                currentIndex = index;
+                slides[currentIndex].classList.add('active');
+                dots[currentIndex].classList.add('active');
+                sliderTitle.textContent = slides[currentIndex].dataset.title;
+            }
+
+            function showNextSlide() {
+                let nextIndex = (currentIndex + 1) % slides.length;
+                setCurrentSlide(nextIndex);
+            }
+
+            function startInterval() {
+                slideInterval = setInterval(showNextSlide, 5000);
+            }
+
+            function resetInterval() {
+                clearInterval(slideInterval);
+                startInterval();
+            }
+
+            setCurrentSlide(0);
+            startInterval();
         });
     </script>
 

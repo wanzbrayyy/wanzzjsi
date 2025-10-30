@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UdaraSegar.ID - Solusi Lengkap AC Anda</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0a2540;
+            --accent-color: #00c4cc;
+            --light-bg: #f8f9fa;
+            --dark-text: #343a40;
+            --light-text: #6c757d;
+            --white-color: #ffffff;
+            --price-color: #d9480f;
+            --border-radius: 12px;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: var(--white-color);
+            color: var(--dark-text);
+            padding-bottom: 80px;
+        }
+        .hero {
+            background: linear-gradient(45deg, rgba(10, 37, 64, 0.8), rgba(0, 196, 204, 0.7)), url('https://files.catbox.moe/tcjkio.png');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 20px;
+            text-align: center;
+            color: var(--white-color);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero h1 {
+            font-size: 3.5em;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin: 0 0 15px 0;
+            letter-spacing: 1px;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+        .hero p {
+            font-size: 1.3em;
+            margin: 0 auto 35px auto;
+            max-width: 600px;
+            opacity: 0.9;
+        }
+        .hero .btn-jadwal {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 18px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0, 196, 204, 0.3);
+            display: inline-flex;
+            align-items: center;
+        }
+        .hero .btn-jadwal i {
+            margin-right: 10px;
+        }
+        .hero .btn-jadwal:hover {
+            background-color: var(--white-color);
+            transform: translateY(-5px) scale(1.03);
+            box-shadow: 0 10px 25px rgba(0, 196, 204, 0.4);
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.8em;
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+            position: relative;
+            padding-bottom: 15px;
+            transition: all 0.3s ease-in-out;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 5px;
+            background-color: var(--accent-color);
+            border-radius: 5px;
+        }
+        #produk, #pelanggan, #testimoni, .social-media {
+            padding: 80px 20px;
+        }
+        #pelanggan, .social-media {
+            background-color: var(--light-bg);
+        }
+        .service-grid, .customer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+        }
+        .service-card {
+            background: var(--white-color);
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.09);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        .service-card .card-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+        .service-card .card-content {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .service-card h3 {
+            font-size: 1.6em;
+            margin: 0 0 10px 0;
+            font-weight: 700;
+            color: var(--primary-color);
+            line-height: 1.4;
+        }
+        .service-card .card-description {
+            font-size: 1em;
+            color: var(--light-text);
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        .service-card .card-price {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: var(--price-color);
+            margin-bottom: 25px;
+        }
+        .service-card .btn-book {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 15px 20px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .service-card .btn-book i {
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+        .service-card .btn-book:hover {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            transform: scale(1.03);
+        }
+        .customer-card {
+            background: var(--white-color);
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            color: var(--dark-text);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            text-align: center;
+            min-height: 100px;
+        }
+        .customer-card h3 {
+            font-size: 1.6em;
+            margin: 0;
+            font-weight: 700;
+            line-height: 1.4;
+            color: var(--primary-color);
+        }
+        #testimoni {
+            background-color: #dfff00;
+            color: var(--primary-color);
+            overflow: hidden;
+        }
+        #testimoni .section-title {
+            color: #0056b3;
+            font-weight: 900;
+        }
+        .slider-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+            padding: 0 50px;
+            display: none;
+        }
+        .slide.active {
+            display: block;
+        }
+        .slide blockquote {
+            background: none;
+            border: none;
+            box-shadow: none;
+            color: #0056b3;
+            margin: 15px auto;
+            max-width: 85%;
+            font-size: 1.3em;
+            font-style: normal;
+            line-height: 1.6;
+            padding: 10px 0;
+            text-align: center;
+            overflow-wrap: break-word;
+            font-weight: 500;
+        }
+        .slider-dots {
+            text-align: center;
+            padding: 20px 0;
+        }
+        .dot {
+            cursor: pointer;
+            height: 12px;
+            width: 12px;
+            margin: 0 5px;
+            background-color: rgba(0, 86, 179, 0.3);
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+        .dot.active {
+            background-color: #0056b3;
+        }
+        #prevBtn, #nextBtn {
+            display: none;
+        }
+        .social-media { 
+            padding-top: 60px; 
+            padding-bottom: 60px; 
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .social-icons a {
+            font-size: 4em;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .social-icons a:hover {
+            transform: translateY(-5px) scale(1.1);
+        }
+        .footer {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            padding: 60px 20px;
+        }
+        .footer-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+        }
+        .footer-logo-container {
+            text-align: center;
+        }
+        .footer-logo-container img {
+            max-width: 250px;
+            background: var(--white-color);
+            border-radius: 50%;
+            padding: 15px;
+        }
+        .footer-contact h3 {
+            margin-top: 0;
+            margin-bottom: 30px;
+            font-size: 2em;
+            color: var(--accent-color);
+            text-align: center;
+        }
+        .contact-info-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .contact-item {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            transition: background-color 0.3s ease;
+        }
+        .contact-item:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        .contact-label {
+            display: block;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 8px;
+            font-size: 1em;
+        }
+        .contact-value {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: var(--white-color);
+        }
+        .contact-value a {
+            color: var(--white-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .contact-value a:hover {
+            color: var(--accent-color);
+        }
+        .footer-col-logo, .footer-col-contact {
+            flex: 1;
+            min-width: 320px;
+        }
+        .copyright {
+            text-align: center;
+            margin: 40px auto 0 auto;
+            max-width: 1100px;
+            padding: 20px;
+            font-size: 0.9em;
+            opacity: 0.8;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: var(--border-radius);
+        }
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 70px;
+            background-color: var(--white-color);
+            box-shadow: 0 -4px 15px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            z-index: 1000;
+        }
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: var(--light-text);
+            flex: 1;
+            padding: 10px 0;
+            transition: all 0.3s ease;
+        }
+        .nav-item i {
+            font-size: 1.8em;
+            margin-bottom: 5px;
+        }
+        .nav-item span {
+            font-size: 0.8em;
+            font-weight: 500;
+        }
+        .nav-item.active, .nav-item:hover {
+            color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5em; }
+            .hero p { font-size: 1.1em; }
+            .section-title { font-size: 2.2em; }
+            .customer-grid, .service-grid { grid-template-columns: 1fr; }
+            .footer-content { flex-direction: column; }
+            .nav-item i { font-size: 1.6em; }
+            .nav-item span { font-size: 0.7em; }
+            .slider-container { min-height: 250px; }
+            .slide { padding: 0 35px; }
+            .slide blockquote { font-size: 1.2em; line-height: 1.8; max-width: 95%;}
+            .customer-card h3 { font-size: 1.4em; }
+        }
+    </style>
+</head>
+<body>
+
+    <main id="home">
+        <section class="hero">
+            <h1>RUANGAN NYAMAN DINGIN LAGI</h1>
+            <p>"Kami siap menjadi solusi terbaik untuk kenyamanan ruangan Anda"</p>
+            <a href="https://wa.me/6282333251919" class="btn-jadwal"><i class="fas fa-calendar-check"></i> Jadwalkan Servis</a>
+        </section>
+
+        <section id="produk">
+            <h2 class="section-title">Katalog Layanan & Harga</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <img src="https://files.catbox.moe/vci3qa.jpg" alt="Cuci AC" class="card-image">
+                    <div class="card-content">
+                        <h3>Cuci AC Standar</h3>
+                        <p class="card-description">Pembersihan unit indoor & outdoor menyeluruh untuk udara lebih bersih dan performa AC optimal.</p>
+                        <p class="card-price">Mulai dari Rp 80.000</p>
+                        <a href="https://wa.me/6282333251919?text=Halo%2C%20saya%20tertarik%20untuk%20memesan%20layanan%20Cuci%20AC%20Standar." target="_blank" class="btn-book"><i class="fab fa-whatsapp"></i> Pesan Sekarang</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="https://files.catbox.moe/dayurg.jpg" alt="Perbaikan AC" class="card-image">
+                    <div class="card-content">
+                        <h3>Perbaikan AC</h3>
+                        <p class="card-description">Diagnosa dan perbaikan berbagai kerusakan seperti bocor, tidak dingin, atau mati total oleh teknisi ahli. Perbaikan biasa, overhaul, sparepart dan ganti pipa.</p>
+                        <p class="card-price">Mulai dari Rp 50.000</p>
+                        <a href="https://wa.me/6282333251919?text=Halo%2C%20AC%20saya%20bermasalah.%20Saya%20ingin%20memesan%20layanan%20Perbaikan%20AC." target="_blank" class="btn-book"><i class="fab fa-whatsapp"></i> Konsultasi Kerusakan</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="https://files.catbox.moe/kpwndq.jpg" alt="Isi Freon" class="card-image">
+                    <div class="card-content">
+                        <h3>Isi Ulang Freon</h3>
+                        <p class="card-description">Pengisian kembali freon berkualitas tinggi (R32/R410a/R22) untuk mengembalikan performa pendinginan AC Anda.</p>
+                        <p class="card-price">Mulai dari Rp 200.000</p>
+                        <a href="https://wa.me/6282333251919?text=Halo%2C%20saya%20ingin%20memesan%20layanan%20Isi%20Ulang%20Freon." target="_blank" class="btn-book"><i class="fab fa-whatsapp"></i> Pesan Sekarang</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="https://files.catbox.moe/gzizod.jpg" alt="Instalasi AC" class="card-image">
+                    <div class="card-content">
+                        <h3>Instalasi AC Baru</h3>
+                        <p class="card-description">Pemasangan unit AC baru semua merk dan tipe dengan rapi, presisi, dan sesuai standar keamanan.</p>
+                        <p class="card-price">Mulai dari Rp 250.000</p>
+                        <a href="https://wa.me/6282333251919?text=Halo%2C%20saya%20ingin%20bertanya%20tentang%20layanan%20Instalasi%20AC%20Baru." target="_blank" class="btn-book"><i class="fab fa-whatsapp"></i> Jadwalkan Pemasangan</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="https://files.catbox.moe/fh6afk.jpg" alt="Bongkar Pasang AC" class="card-image">
+                    <div class="card-content">
+                        <h3>Bongkar Pasang AC</h3>
+                        <p class="card-description">Layanan pemindahan unit AC dari satu lokasi ke lokasi lain, baik di dalam maupun antar gedung.</p>
+                        <p class="card-price">Mulai dari Rp 100.000</p>
+                        <a href="https://wa.me/6282333251919?text=Halo%2C%20saya%20butuh%20jasa%20Bongkar%20Pasang%20AC." target="_blank" class="btn-book"><i class="fab fa-whatsapp"></i> Pesan Sekarang</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="https://files.catbox.moe/s4pi2s.jpg" alt="Kontrak Service" class="card-image">
+                    <div class="card-content">
+                        <h3>Kontrak Penawaran Berkala (Maintenance)</h3>
+                        <p class="card-description">Solusi perawatan AC rutin untuk perkantoran, instansi, dan bisnis dengan jadwal fleksibel dan harga khusus.</p>
+                        <p class="card-price">Harga Khusus</p>
+                        <a href="https://wa.me/6282333251919?text=Halo%2C%20saya%20tertarik%20dengan%20Kontrak%20Penawaran%20Berkala%20untuk%20perusahaan%20kami." target="_blank" class="btn-book"><i class="fab fa-whatsapp"></i> Ajukan Penawaran</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pelanggan">
+            <h2 class="section-title">PELANGGAN KAMI</h2>
+            <div class="customer-grid">
+                <div class="customer-card">
+                    <h3>Rumah, Apartemen, Hotel</h3>
+                </div>
+                <div class="customer-card">
+                    <h3>Bisnis, Kantor, Perusahaan, Pabrik</h3>
+                </div>
+                <div class="customer-card">
+                    <h3>Pemerintahan, Instansi</h3>
+                </div>
+                 <div class="customer-card">
+                    <h3>Tempat Pendidikan</h3>
+                </div>
+                <div class="customer-card">
+                    <h3>Fasilitas Sosial, Rumah Sakit, Rumah Ibadah</h3>
+                </div>
+                <div class="customer-card">
+                    <h3>Konstruksi, Developer, Kontraktor</h3>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimoni">
+            <h2 id="slider-title" class="section-title">PESAN AYAH IBU</h2>
+            <div class="slider-container">
+                <div class="slider-wrapper">
+                    <div class="slide active" data-title="PESAN AYAH IBU">
+                        <blockquote>"Melayani sebaik mungkin, seakan-akan sedang melayani Tuhan."</blockquote>
+                        <blockquote>"Kerja teknisi itu 70% servis, 30% pura-pura ngerti pertanyaan customer."</blockquote>
+                    </div>
+                    <div class="slide" data-title="DOA TUKANG SERVIS">
+                        <blockquote>"Hari ini targetnya cuma satu: ademkan ruangan, bukan suasana."</blockquote>
+                        <blockquote>"Kami datang untuk benerin AC, bukan benerin suasana hati ibu."</blockquote>
+                        <blockquote>"Buka cover AC, ketemu debu. Buka obrolan sama customer, ketemu drama."</blockquote>
+                    </div>
+                    <div class="slide" data-title="JOKES BAPAK-BAPAK">
+                        <blockquote>"Tebak: Kenapa AC sering sakit hati? Jawab: Soalnya kerja keras terus, tapi lupa diservis."</blockquote>
+                        <blockquote>"Kalau AC ngambek, suasana ikut panas."</blockquote>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-dots"></div>
+        </section>
+
+        <section class="social-media">
+            <h2 class="section-title">SOCIAL MEDIA</h2>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/udarasegar_id?igsh=MWF3YW5mbmU5dHhtcw==" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </section>
+
+        <footer id="kontak" class="footer">
+            <div class="footer-content">
+                <div class="footer-col-logo">
+                    <div class="footer-logo-container">
+                        <img src="https://files.catbox.moe/mxr9ww.jpg" alt="Logo Udara Segar ID">
+                    </div>
+                </div>
+                <div class="footer-col-contact">
+                    <h3>Hubungi Kami</h3>
+                    <div class="contact-info-grid">
+                        <div class="contact-item">
+                            <span class="contact-label">Alamat:</span>
+                            <span class="contact-value">Jalan Surabayan II No 10, Kota Surabaya, 60261</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-label">Telepon:</span>
+                            <span class="contact-value">
+                                <a href="https://wa.me/6282333251919" target="_blank">082333251919 (WhatsApp)</a>
+                            </span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-label">Email:</span>
+                            <span class="contact-value">
+                                <a href="mailto:ansorifadli19@gmail.com">ansorifadli19@gmail.com</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                © 2025/2026 UdaraSegar.ID. All Rights Reserved.
+            </div>
+        </footer>
+    </main>
+
+    <nav class="bottom-nav">
+        <a href="#home" class="nav-item active">
+            <i class="fas fa-home"></i>
+            <span>Beranda</span>
+        </a>
+        <a href="#produk" class="nav-item">
+            <i class="fas fa-wrench"></i>
+            <span>Jadwalkan Servis</span>
+        </a>
+        <a href="https://wa.me/6282333251919?text=Halo%2C%20saya%20ingin%20bertanya%20tentang%20pembelian%20unit%20AC%20baru." target="_blank" class="nav-item">
+            <i class="fas fa-shopping-cart"></i>
+            <span>Beli AC</span>
+        </a>
+        <a href="#pelanggan" class="nav-item">
+            <i class="fas fa-users"></i>
+            <span>Pelanggan</span>
+        </a>
+        <a href="#kontak" class="nav-item">
+            <i class="fas fa-headset"></i>
+            <span>Kontak</span>
+        </a>
+    </nav>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navItems = document.querySelectorAll('.nav-item');
+            const sections = document.querySelectorAll('main section, main footer');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        let currentId = entry.target.id;
+                        navItems.forEach(item => {
+                            item.classList.remove('active');
+                            if (item.getAttribute('href') === `#${currentId}`) {
+                                item.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, { threshold: 0.5 });
+            sections.forEach(section => {
+                if(section.id) {
+                   observer.observe(section);
+                }
+            });
+
+            const sliderTitle = document.getElementById('slider-title');
+            const slides = document.querySelectorAll('.slide');
+            const dotsContainer = document.querySelector('.slider-dots');
+            let currentIndex = 0;
+            let slideInterval;
+
+            slides.forEach((_, index) => {
+                const dot = document.createElement('span');
+                dot.classList.add('dot');
+                dot.addEventListener('click', () => {
+                    setCurrentSlide(index);
+                    resetInterval();
+                });
+                dotsContainer.appendChild(dot);
+            });
+
+            const dots = document.querySelectorAll('.dot');
+
+            function setCurrentSlide(index) {
+                slides.forEach(slide => slide.classList.remove('active'));
+                dots.forEach(dot => dot.classList.remove('active'));
+                currentIndex = index;
+                slides[currentIndex].classList.add('active');
+                dots[currentIndex].classList.add('active');
+                sliderTitle.textContent = slides[currentIndex].dataset.title;
+            }
+
+            function showNextSlide() {
+                let nextIndex = (currentIndex + 1) % slides.length;
+                setCurrentSlide(nextIndex);
+            }
+
+            function startInterval() {
+                slideInterval = setInterval(showNextSlide, 5000);
+            }
+
+            function resetInterval() {
+                clearInterval(slideInterval);
+                startInterval();
+            }
+
+            setCurrentSlide(0);
+            startInterval();
+        });
+    </script>
+
+</body>
+</html>
